@@ -26,6 +26,18 @@
   .empty { color: #65676b; font-style: italic; font-size: 13px; }
   .strike { text-decoration: line-through; color: #8a8d91; }
   .banner { background: #fff8e1; border: 1px solid #f5d97a; color: #8a5a00; padding: 8px 12px; border-radius: 4px; font-size: 12px; margin-bottom: 16px; }
+  .toggle-btn { display: inline-block; margin-left: 10px; padding: 3px 10px; font-size: 11px;
+                font-family: inherit; text-transform: none; letter-spacing: 0; font-weight: 500;
+                background: #1d2129; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+  .toggle-btn:hover { background: #3a3d42; }
+  .reply-draft { display: none; margin: 8px 0 4px 0; padding: 10px 12px;
+                 background: #f7f8fa; border-left: 3px solid #4b5563; font-size: 13px;
+                 line-height: 1.5; border-radius: 3px; }
+  .reply-draft strong { display: block; font-size: 11px; text-transform: uppercase;
+                        letter-spacing: 0.05em; color: #65676b; margin-bottom: 6px; font-weight: 600; }
+  .reply-draft .to { color: #65676b; font-style: italic; margin-bottom: 4px; }
+  .reply-draft p { margin: 4px 0; white-space: pre-wrap; }
+  body.show-replies .reply-draft { display: block; }
 </style>
 </head>
 <body>
@@ -38,11 +50,50 @@
     A recurring afternoon ops catch-up was cancelled this morning by its chair; no deck review needed today. A bi-weekly market sync has moved to Thursday 11:00 and now collides head-on with a separate regional bi-weekly that a Leadership-tier contact is attending. Thursday also retains a 14:00 double-booking and a third clash at 16:00 — three calendar decisions required before EOD.
   </div>
 
-  <h2>Decisions Pending Your Sign-off</h2>
+  <h2>Decisions Pending Your Sign-off
+    <button class="toggle-btn" onclick="document.body.classList.toggle('show-replies')">Generate suggested replies</button>
+  </h2>
   <ul>
-    <li><span class="p0">P0</span> <span class="tag">decision</span> <strong>Thu 21 May 11:00 conflict</strong> — bi-weekly market sync (rescheduled today) overlaps a regional bi-weekly with a Leadership-tier contact attending. Attend one and send a delegate to the other.</li>
-    <li><span class="p0">P0</span> <span class="tag">decision</span> <strong>Thu 21 May 14:00 conflict</strong> — your recurring AI daily (Leadership-tier attending) vs a monthly cross-functional review (you hold a category slot). Move, skip, or nominate a delegate.</li>
-    <li><span class="p0">P0</span> <span class="tag">decision</span> <strong>Thu 21 May 16:00 conflict</strong> — newly received tooling-evaluation invite overlaps your own 16:30 recurring AI catch-up. RSVP outstanding.</li>
+    <li><span class="p0">P0</span> <span class="tag">decision</span> <strong>Thu 21 May 11:00 conflict</strong> — bi-weekly market sync (rescheduled today) overlaps a regional bi-weekly with a Leadership-tier contact attending. Attend one and send a delegate to the other.
+      <div class="reply-draft">
+        <strong>Suggested reply (for your reference)</strong>
+        <div class="to">To: [bi-weekly market sync organiser] &nbsp;•&nbsp; Subject: Re: Bi-weekly market sync — Thu 11:00</div>
+        <p>Hi [name],
+
+Tomorrow's 11:00 slot clashes with the regional bi-weekly that [Leadership contact] is attending — I'll need to take that one. I'll catch the market sync follow-ups async; could you share the deck link and the action items afterwards? Happy to follow up bilaterally on anything in my scope.
+
+Thanks,
+[Your name]</p>
+      </div>
+    </li>
+    <li><span class="p0">P0</span> <span class="tag">decision</span> <strong>Thu 21 May 14:00 conflict</strong> — your recurring AI daily (Leadership-tier attending) vs a monthly cross-functional review (you hold a category slot). Move, skip, or nominate a delegate.
+      <div class="reply-draft">
+        <strong>Suggested reply (for your reference)</strong>
+        <div class="to">To: [cross-functional review organiser] (cc: [delegate 1], [delegate 2]) &nbsp;•&nbsp; Subject: Re: Monthly review — Thu 14:00</div>
+        <p>Hi [name],
+
+The 14:00 slot tomorrow collides with my recurring AI daily catch-up. [Delegate 1] and [Delegate 2] will cover my category seat; I've looped them in on this thread. I'll review the deck and any follow-ups async after the meeting.
+
+Thanks,
+[Your name]</p>
+      </div>
+    </li>
+    <li><span class="p0">P0</span> <span class="tag">decision</span> <strong>Thu 21 May 16:00 conflict</strong> — newly received tooling-evaluation invite overlaps your own 16:30 recurring AI catch-up. RSVP outstanding.
+      <div class="reply-draft">
+        <strong>Suggested reply (for your reference)</strong>
+        <div class="to">To: [tooling-evaluation organiser] &nbsp;•&nbsp; Subject: Re: Tooling evaluation — Thu 16:00</div>
+        <p>Hi [name],
+
+Thanks for setting this up. The 16:00–17:00 slot overlaps my AI catch-up with [peer] at 16:30. Two options on my side:
+
+  1. Shift the tooling session to Friday (any time) or earlier on Thursday — I'd prefer this so I can give it the full hour.
+  2. If neither works, I can join 16:00–16:30 only, then drop.
+
+Let me know which works.
+
+[Your name]</p>
+      </div>
+    </li>
   </ul>
 
   <h2>Prioritised Checklist</h2>
